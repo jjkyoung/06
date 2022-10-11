@@ -3,17 +3,34 @@
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-int square(int a)
+
+int factorial(int n)
 {
-	return a*a;
+	int res=1, i;
+	for(i=1; i<=n; i++)
+	    res = res*i;
+	
+	return res;    
 }
+
+int combination(int n, int r)
+{
+	return(factorial(n)/(factorial(n-r)*factorial(r)));	
+	
+}
+
 
 int main(int aintrgc, char *argv[]) {
-	int a = 2;
+	int n;
+	printf("n= ");
+	scanf("%d", &n);
 	
-	a = square(a);
+	int r;
+	printf("r= ");
+	scanf("%d", &r);
+
+	printf("C(%d, %d) = %d\n", n, r, combination(n,r));
 	
-	printf("a=%i\n", a);
+	return 0;
 }
 
-   
